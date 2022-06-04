@@ -20,9 +20,27 @@ const bookSchema = new mongoose.Schema({
             required: false,
         },
         rating: {
-            type: Int,
+            type: Number,
             required: false,
-        }
+        },
+        uploadedBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required: true
+        },
+        // add the favoriteCount property
+        recommendCount: {
+            type: Number,
+            default: 0
+        },
+        // add the favoritedBy property
+        recommendBy: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User'
+            }
+        ]
+
         
     },
     {

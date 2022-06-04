@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { db } = require('./models/book');
 
 module.exports = {
         connect: DB_HOST => {
